@@ -1,0 +1,31 @@
+.Container-MenuNavigation ul{
+    padding:0px;
+    width: 80px;
+    height: 100vh;
+    margin: 0px;
+    background: var(--bg-primary);
+    position: relative;
+    left: -100%;
+    transition: left .2s ease-in-out;
+}
+.Container-MenuNavigation ul li{
+    text-decoration: none;
+    list-style: none;
+}
+.Container-MenuNavigation ul li a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color:#fff;
+    text-decoration: none;
+}
+
+@media(min-width:700px){
+    .Container-MenuNavigation ul{
+        width: 50px;
+    }
+}

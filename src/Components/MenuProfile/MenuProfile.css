@@ -1,0 +1,91 @@
+.Container-Profile-Menu{
+    display: flex;
+}
+.Container-Profile-Menu .Container-PM{
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 auto;
+    
+   
+}
+/* Section One*/
+.Container-Profile-Menu .Container-PM .Profile-Menu-Section-One{
+    flex:1 1 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top:10px;
+}
+.Container-Profile-Menu .Container-Img{
+    width: 40px;
+    
+}
+
+.Container-Profile-Menu .Container-Img img{
+    width: 100%;
+}
+
+
+/*Section Two */
+.Container-Profile-Menu .Container-PM .Profile-Menu-Section-Two{
+    flex:1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-top:10px;
+}
+.Container-Profile-Menu .Container-PMSTWO{
+    display: flex;
+}
+
+.Container-Profile-Menu .Container-PMSTWO h6{
+    color:#606060;
+    line-height:normal;
+    margin-right: 10px;
+}
+.Container-Profile-Menu .Container-Icon{
+    border:1px solid #606060;
+    border-radius: 100%;
+    height: 25px;
+    width: 25px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:-2px;
+}
+.Container-Profile-Menu .IconPerson{
+    font-size: 18px;
+    color:#606060;
+}
+
+/* Section Three */
+.Container-Profile-Menu .Profile-Menu-Section-Three{
+    background: var(--bg-primary);
+    border-bottom:1px solid #fff;
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    width: 50px;
+    cursor: pointer;
+    justify-content: center;
+    transition: width .2s ease-in-out;
+}
+.Container-Profile-Menu .Profile-Menu-Section-Three .IconMenu{
+    font-weight: 900;
+    color:#fff;
+    font-size: 30px;
+}
+.Container-Profile-Menu .w-IconMenu{
+    width: 80px;
+}
+@media(min-width:700px){
+    .Container-Profile-Menu .w-IconMenu{
+        width: 50px;
+    }
+}
