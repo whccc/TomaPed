@@ -1,12 +1,18 @@
+.Container-MenuNavigation{
+    background: rgba(0, 0, 0, .4);
+    height: 100%;
+    width: 100%;
+    left: -100%;
+    transition: left .2s ease-in-out;
+    position: absolute;
+    z-index: 2;
+}
 .Container-MenuNavigation ul{
     padding:0px;
     width: 80px;
-    height: 100vh;
+    height: 100%;
     margin: 0px;
     background: var(--bg-primary);
-    position: relative;
-    left: -100%;
-    transition: left .2s ease-in-out;
 }
 .Container-MenuNavigation ul li{
     text-decoration: none;
@@ -24,8 +30,10 @@
     text-decoration: none;
 }
 
-@media(min-width:700px){
+@media(min-width:1000px){
+    .Container-MenuNavigation,
     .Container-MenuNavigation ul{
-        width: 50px;
+        width: 65px;
+        left: 0%;
     }
 }

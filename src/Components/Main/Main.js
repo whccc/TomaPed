@@ -1,14 +1,25 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import MenuNavigation from '../MenuNavigation/MenuNavigation';
-import MenuProfile  from '../MenuProfile/MenuProfile';
-import './Main.css';
-class Main extends Component{
+import MenuProfile from '../MenuProfile/MenuProfile';
+import Home from '../Home/Home';
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import '../../../primereact/resources/themes/bootstrap4-light-blue/theme.css';
+import '../../../primereact/resources/primereact.min.css';
+import '../../../primeicons/primeicons.css';
 
-    render(){
-        return(
+import './Main.css';
+class Main extends Component {
+
+    render() {
+        return (
             <main>
-                <MenuProfile/>
-                <MenuNavigation/>
+                <MenuProfile />
+                <MenuNavigation />
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                    </Switch>
+                </BrowserRouter>
             </main>
         );
     }

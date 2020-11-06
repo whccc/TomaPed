@@ -7,8 +7,6 @@
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
-    
-   
 }
 /* Section One*/
 .Container-Profile-Menu .Container-PM .Profile-Menu-Section-One{
@@ -41,6 +39,8 @@
 }
 .Container-Profile-Menu .Container-PMSTWO{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Container-Profile-Menu .Container-PMSTWO h6{
@@ -71,7 +71,7 @@
     display: flex;
     align-items: center;
     font-size: 25px;
-    width: 50px;
+    width: 65px;
     cursor: pointer;
     justify-content: center;
     transition: width .2s ease-in-out;
@@ -86,6 +86,6 @@
 }
 @media(min-width:700px){
     .Container-Profile-Menu .w-IconMenu{
-        width: 50px;
+        width: 65px;
     }
 }

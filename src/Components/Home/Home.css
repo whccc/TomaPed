@@ -1,0 +1,102 @@
+.Container-Home{
+    max-width: 1500px;
+    width: 100%;
+    margin: auto;
+    min-height: 100vh;
+    padding: 10px;
+    transition: padding .5s ease-in-out;
+}
+/* Section one */
+.Container-Home .Container-HM .Container-Section-One{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.Container-Home .Container-HM .Container-Section-One .Container-SO{
+    border:1px solid #ddd;
+    display: flex;
+    flex: 1 1 auto;
+    padding: 5px;
+    color:var(--bg-secundary);
+}
+.Container-Home .Container-HM .Container-Section-One .Container-info{
+    flex:1 1 auto;
+}
+
+.Container-Home .Container-HM .Container-Section-One .Container-icon{
+    flex:1 1 auto;
+    text-align: end;
+    font-size: 12px;
+}
+/*Section two */
+.Container-Home .Container-Section-Two{
+    border:1px solid #ddd;
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+}
+
+.Container-Home .Container-Section-Two h4,
+.Container-Home .Container-Section-Three h4{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+/*Section three */
+.Container-Home .Container-Section-Three{
+    padding: 10px;
+    border:1px solid #ddd;
+    margin-top: 30px;
+    text-align: center;
+}
+.Container-Home .Container-table{
+    overflow: auto;
+}
+.Container-Home .p-paginator{
+    width: 750px;
+}
+.Container-Home .p-datatable table{
+    width: 100% !important;
+    table-layout:auto !important;
+}
+
+
+@media(min-width:1000px){
+    .Container-Home{
+        padding-left: 80px;
+        padding-right: 20px;
+    }
+    .Container-Home .Container-HM .Container-Section-One .Container-SO:nth-child(1){
+       width: 30% !important;
+       flex:none !important;
+       font-size: 23px;
+       margin-right:5%;
+       padding: 20px;
+    }
+    .Container-Home .Container-HM .Container-Section-One .Container-SO:nth-child(2){
+        width: 30% !important;
+        flex:none !important;
+        font-size: 23px;
+       margin-right:5%;
+       padding: 20px;
+    }
+    
+    .Container-Home .Container-HM .Container-Section-One .Container-SO .Container-icon{
+        font-size: 25px;
+    }
+    .Container-Home .Container-HM .Container-Section-One .Container-SO:nth-child(3){
+        width: 30% !important;
+        flex:none !important;
+        font-size: 23px;
+        padding: 20px;
+    }
+    
+    .Container-Home .Container-Section-Two{
+        margin-right: 2.5%;
+    }
+    .Container-Home .Container-Section-Two,
+    .Container-Home .Container-Section-Three{
+        width: 48.75%;
+        float: left;
+    }
+}
