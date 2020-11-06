@@ -1,0 +1,51 @@
+.Container-Sellers{
+    padding: 10px;
+    max-width: 1500px;
+    margin:auto;
+}
+.Container-Sellers .Container-Sell{
+    border:1px solid #ddd;
+    padding: 5px;
+}
+
+.Container-Sellers .Container-Sell h3{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+/*Modal*/
+.Container-Sellers .Container-Modal > button{
+ margin-bottom: 20px;
+ margin-top: 20px;
+ background: var(--bg-primary);
+}
+.Container-Sellers .Container-Data-Modal{
+    padding-top: 10px;
+}
+.Container-Sellers .Container-Data-Modal .p-float-label{
+    margin-bottom: 20px;
+}
+.Container-Sellers .Container-Data-Modal .p-float-label input{
+    width: 100%;
+}
+.Container-Sellers .Container-Modal .Container-button > button{
+    margin-right: 10px;
+}
+/*Table*/
+.Container-Sellers .Container-Table{
+    overflow: auto;
+}
+.Container-Sellers .p-paginator{
+    width: 650px;
+}
+@media(min-width:1000px){
+    .Container-Sellers{
+        padding-left: 80px;
+    }
+    .Container-Sellers .p-dialog{
+        width: 50vw !important;
+    }
+    .Container-Sellers .p-paginator{
+        width: 100%;
+    }
+}

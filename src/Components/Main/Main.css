@@ -3,11 +3,23 @@ body{
 }
 main{
     position: relative;
+    min-height: 100vh;
 }
 :root{
     --bg-primary:#5271ff;
     --bg-secundary:#606060;
+    --bg-danger:red;
+}
+.bg-primary{
+    background: var(--bg-primary);
+}
+.bg-danger{
+    background: var(--bg-danger);
 }
 h1,h2,h3,h4,h5,h6,label,p{
     margin:0px;
+}
+.p-datatable table{
+    width: 100% !important;
+    table-layout:auto !important;
 }

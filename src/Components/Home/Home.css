@@ -55,10 +55,7 @@
 .Container-Home .p-paginator{
     width: 750px;
 }
-.Container-Home .p-datatable table{
-    width: 100% !important;
-    table-layout:auto !important;
-}
+
 
 
 @media(min-width:1000px){

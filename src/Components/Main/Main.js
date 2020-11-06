@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MenuNavigation from '../MenuNavigation/MenuNavigation';
 import MenuProfile from '../MenuProfile/MenuProfile';
 import Home from '../Home/Home';
+import Sellers from '../Sellers/Sellers';
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import '../../../primereact/resources/themes/bootstrap4-light-blue/theme.css';
 import '../../../primereact/resources/primereact.min.css';
@@ -18,6 +19,7 @@ class Main extends Component {
                 <BrowserRouter>
                     <Switch>
                         <Route exact path='/' component={Home} />
+                        <Route exact path="/Sellers" component={Sellers}/>
                     </Switch>
                 </BrowserRouter>
             </main>
