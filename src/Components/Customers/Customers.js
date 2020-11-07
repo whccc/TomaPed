@@ -8,103 +8,68 @@ import { Dropdown } from 'primereact/dropdown';
 import axios from 'axios';
 import { URL_API } from '../../VariablesDeEntorno.js';
 import { Messages } from 'primereact/messages';
-import './Sellers.css';
-class Sellers extends Component {
+import './Customers.css';
+class Customers extends Component {
     constructor(props) {
         super(props);
         this.state = {
             displayModal: false,
-            Sellers: [
+            Customers: [
             ],
-            Zones: [
+            Cities: [
             ],
             strDocument: "",
             strName: "",
             strLastName: "",
             strEmail: "",
-            strPassword: "",
             strPhone: "",
             strAddress: "",
-            selectedZone: null,
+            selectedCity: null,
             blnButtonEdit: false,
             blnButtonCreate: true,
             globalFilterTable: ""
         };
     }
     componentDidMount() {
-        this.LoadSellers();
-        this.LoadZones();
-    }
-    //Create user
-    CreateUserSeller = async () => {
-        try {
-            if (!this.ValidateInput()) {
-                return;
-            }
-            let strDataUserSelles = {
-                strDocument: this.state.strDocument,
-                strName: this.state.strName,
-                strLastName: this.state.strLastName,
-                strEmail: this.state.strEmail,
-                strPassword: this.state.strPassword,
-                strPhone: this.state.strPhone,
-                strAddress: this.state.strAddress,
-                intIdTypeUser: 2,
-                intIdZone: this.state.selectedZone.code
-            }
-            let strData = await axios.post(URL_API + "/api/user/create",
-                strDataUserSelles);
-            if (strData.data.Success) {
-                this.messages.show({ severity: 'success', summary: 'Seller create with success' });
-                this.UpdateStateSeller();
-                //Load sellers
-                this.LoadSellers();
-            }
-        } catch (Error) {
-            console.log(Error)
-        }
+        this.LoadCustomers();
+        this.LoadCities();
     }
     //Validar Input
     ValidateInput = () => {
         try {
             if (this.state.strDocument.trim() == "") {
                 document.getElementById('strDocument').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Documento' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Documento' });
                 return false;
             }
             if (this.state.strName.trim() == "") {
                 document.getElementById('strName').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Nombres' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Nombres' });
                 return false;
             }
             if (this.state.strLastName.trim() == "") {
                 document.getElementById('strLastName').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Apellidos' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Apellidos' });
                 return false;
             }
             if (this.state.strEmail.trim() == "") {
                 document.getElementById('strEmail').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Email' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Email' });
                 return false;
             }
-            if (this.state.selectedZone == null) {
-                document.getElementById('dbZone').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Seleccione Zone' });
-                return false;
-            }
-            if (this.state.strPassword.trim() == "") {
-                document.getElementById('strPassword').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Clave' });
+            if (this.state.selectedCity == null) {
+                document.getElementById('dbCity').focus();
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Seleccione City' });
                 return false;
             }
             if (this.state.strPhone.trim() == "") {
                 document.getElementById('strPhone').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Celular' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Celular' });
                 return false;
             }
             if (this.state.strAddress.trim() == "") {
                 document.getElementById('strAddress').focus();
-                this.MessagesModalSeller.show({ severity: 'error', summary: 'Digite Dirección' });
+                this.MessagesModalCustomer.show({ severity: 'error', summary: 'Digite Dirección' });
                 return false;
             }
             return true;
@@ -112,48 +77,78 @@ class Sellers extends Component {
             console.log(Error)
         }
     }
-    //Load Sellers
-    LoadSellers = async () => {
+    //Create user
+    CreateUserCustomer = async () => {
         try {
-            let strData = await axios.get(URL_API + "/api/user");
+            if (!this.ValidateInput()) {
+                return;
+            }
+            let strDataUserSelles = {
+                strDocument: this.state.strDocument,
+                strName: this.state.strName,
+                strLastName: this.state.strLastName,
+                strEmail: this.state.strEmail,
+                strPhone: this.state.strPhone,
+                strAddress: this.state.strAddress,
+                intIdCity: this.state.selectedCity.code
+            }
+            let strData = await axios.post(URL_API + "/api/customer/create",
+                strDataUserSelles);
+
+                console.log(strData)
             if (strData.data.Success) {
-                this.setState({ Sellers: strData.data.strData })
+                this.messages.show({ severity: 'success', summary: 'Customer create with success' });
+                this.UpdateStateCustomer();
+                //Load Customers
+                this.LoadCustomers();
             }
         } catch (Error) {
             console.log(Error)
         }
     }
-    //Load Zones
-    LoadZones = async () => {
+    
+    //Load Customers
+    LoadCustomers = async () => {
         try {
-            let strData = await axios.get(URL_API + "/api/zone")
+            let strData = await axios.get(URL_API + "/api/customer");
+            if (strData.data.Success) {
+                this.setState({ Customers: strData.data.strData })
+            }
+        } catch (Error) {
+            console.log(Error)
+        }
+    }
+    //Load Cities
+    LoadCities = async () => {
+        try {
+            let strData = await axios.get(URL_API + "/api/city")
             if (strData.data.Success) {
                 let ArrayZone = [];
-                await strData.data.strData.forEach((DataZone) => {
+                await strData.data.strData.forEach((DataCity) => {
                     ArrayZone.push({
-                        name: DataZone.strDescription,
-                        code: DataZone.intIdZone
+                        name: DataCity.strDescription,
+                        code: DataCity.intIdCity
                     })
                 });
-                this.setState({ Zones: ArrayZone });
+                this.setState({ Cities: ArrayZone });
             }
         } catch (Error) {
             console.log(Error);
         }
     }
-    //Edit Data Seller
-    EditSellerData = async (objDataSeller) => {
+    //Edit Data Customer
+    EditCustomerData = async (objDataCustomer) => {
         try {
             await this.setState({
                 displayModal: true,
-                strDocument: objDataSeller.strDocument,
-                strName: objDataSeller.strName,
-                strLastName: objDataSeller.strLastName,
-                strEmail: objDataSeller.strEmail,
-                strPassword: objDataSeller.strPassword,
-                strPhone: objDataSeller.strPhone,
-                strAddress: objDataSeller.strAddress,
-                selectedZone: this.state.Zones.filter((DataZone) => { return DataZone.name == objDataSeller.strDescriptionZone })[0],
+                strDocument: objDataCustomer.strDocument,
+                strName: objDataCustomer.strName,
+                strLastName: objDataCustomer.strLastName,
+                strEmail: objDataCustomer.strEmail,
+                strPassword: objDataCustomer.strPassword,
+                strPhone: objDataCustomer.strPhone,
+                strAddress: objDataCustomer.strAddress,
+                selectedCity: this.state.Cities.filter((DataCity) => { return DataCity.name == objDataCustomer.strDescriptionCity })[0],
                 blnButtonEdit: true,
                 blnButtonCreate: false
             })
@@ -161,8 +156,8 @@ class Sellers extends Component {
             console.log(Error)
         }
     }
-    //Edit Seller
-    EditSeller = async () => {
+    //Edit Customer
+    EditCustomer = async () => {
         try {
             if (!this.ValidateInput()) {
                 return;
@@ -175,23 +170,23 @@ class Sellers extends Component {
                 strPassword: this.state.strPassword,
                 strPhone: this.state.strPhone,
                 strAddress: this.state.strAddress,
-                intIdZone: this.state.selectedZone.code
+                intIdCity: this.state.selectedCity.code
             }
-            let strData = await axios.put(URL_API + "/api/user/edit",
+            let strData = await axios.put(URL_API + "/api/customer/edit",
                 strDataUserSelles);
             console.log(strData)
             if (strData.data.Success) {
-                this.messages.show({ severity: 'success', summary: 'Seller edit with success' });
-                this.UpdateStateSeller();
-                //Load sellers
-                this.LoadSellers();
+                this.messages.show({ severity: 'success', summary: 'Customer edit with success' });
+                this.UpdateStateCustomer();
+                //Load Customers
+                this.LoadCustomers();
             }
         } catch (Error) {
             console.log(Error)
         }
     }
-    //Actualizar state Seller
-    UpdateStateSeller = () => {
+    //Actualizar state Customer
+    UpdateStateCustomer = () => {
         this.setState({
             displayModal: false,
             strDocument: "",
@@ -201,26 +196,19 @@ class Sellers extends Component {
             strPassword: "",
             strPhone: "",
             strAddress: "",
-            selectedZone: null,
+            selectedCity: null,
             blnButtonEdit: false,
             blnButtonCreate: true
         });
     }
-    onZoneChange = (e) => {
-        this.setState(
-            { selectedZone: e.value }
-        );
-    }
-    displayModal = () => {
-        this.setState({
-            displayModal: this.state.displayModal ? false : true
-        })
-    }
+   
+    /************Table******************** */
+
     renderHeaderTable = () => {
         return (
             <div className="table-header">
                 <div>
-                    <Button label="New Seller" icon="pi pi-external-link" onClick={this.displayModal} />
+                    <Button label="New Customer" icon="pi pi-external-link" onClick={this.displayModal} />
                 </div>
                 <div>
 
@@ -233,18 +221,19 @@ class Sellers extends Component {
             </div>
         );
     }
-    ButtonsTable = (DataSeller) => {
+    ButtonsTable = (DataCustomer) => {
         return (
             <div>
-                <Button icon="pi pi-pencil" className="p-button-rounded" className='bg-primary' onClick={() => this.EditSellerData(DataSeller)} />
+                <Button icon="pi pi-pencil" className="p-button-rounded" className='bg-primary' onClick={() => this.EditCustomerData(DataCustomer)} />
                 {" "}
              </div>
         );
     }
+    /*******************MODAL************************/
     DialogModal = () => {
-        return (<Dialog header={this.state.blnButtonCreate ? "New Seller" : "Edit Seller"} visible={this.state.displayModal} style={{ width: '90vw' }} onHide={this.UpdateStateSeller}>
+        return (<Dialog header={this.state.blnButtonCreate ? "New Customer" : "Edit Customer"} visible={this.state.displayModal} style={{ width: '90vw' }} onHide={this.UpdateStateCustomer}>
             <div className='Container-Data-Modal'>
-                <div className="ContainerDataSeller">
+                <div className="ContainerDataCustomer">
                     <div>
                         <span className="p-float-label">
                             <InputText disabled={this.state.blnButtonCreate ? false : true} id="strDocument" keyfilter="int" value={this.state.strDocument} onChange={(e) => this.setState({ strDocument: e.target.value })} />
@@ -264,12 +253,7 @@ class Sellers extends Component {
                         </span>
                     </div>
                     <div>
-                        <Dropdown value={this.state.selectedZone} options={this.state.Zones} className='SelectZone' id='dbZone' onChange={this.onZoneChange} optionLabel="name" placeholder="Select a Zone" />
-
-                        <span className="p-float-label">
-                            <InputText id="strPassword" value={this.state.strPassword} onChange={(e) => this.setState({ strPassword: e.target.value })} />
-                            <label htmlFor="strPassword" >Clave</label>
-                        </span>
+                        <Dropdown value={this.state.selectedCity} options={this.state.Cities} className='SelectZone' id='dbCity' onChange={this.onCityChange} optionLabel="name" placeholder="Select a city" />
                         <span className="p-float-label">
                             <InputText id="strPhone" value={this.state.strPhone} onChange={(e) => this.setState({ strPhone: e.target.value })} />
                             <label htmlFor="strPhone">Celular</label>
@@ -280,30 +264,40 @@ class Sellers extends Component {
                         </span>
                     </div>
                 </div>
-                <Messages ref={(el) => this.MessagesModalSeller = el}></Messages>
+                <Messages ref={(el) => this.MessagesModalCustomer = el}></Messages>
 
                 <div className='Container-button'>
-                    <Button label="Create" style={{ display: this.state.blnButtonCreate ? "inline-block" : "none" }} className="bg-primary" onClick={this.CreateUserSeller} />
-                    <Button label="Edit" style={{ display: this.state.blnButtonEdit ? "inline-block" : "none" }} className="p-button-warning" onClick={this.EditSeller} />
-                    <Button label="Cancel" className="p-button-danger" onClick={this.UpdateStateSeller} />
+                    <Button label="Create" style={{ display: this.state.blnButtonCreate ? "inline-block" : "none" }} className="bg-primary" onClick={this.CreateUserCustomer} />
+                    <Button label="Edit" style={{ display: this.state.blnButtonEdit ? "inline-block" : "none" }} className="p-button-warning" onClick={this.EditCustomer} />
+                    <Button label="Cancel" className="p-button-danger" onClick={this.UpdateStateCustomer} />
                 </div>
 
 
             </div>
         </Dialog>);
     }
+    onCityChange = (e) => {
+        this.setState(
+            { selectedCity: e.value }
+        );
+    }
+    displayModal = () => {
+        this.setState({
+            displayModal: this.state.displayModal ? false : true
+        })
+    }
     render() {
         return (
-            <section className='Container-Sellers'>
+            <section className='Container-Customers'>
                
                 <div className='Container-Sell'>
-                    <h1>Sellers</h1>
+                    <h1>Customers</h1>
                      <Messages ref={(el) => this.messages = el}></Messages>
                     <div className='Container-Modal'>
                         {this.DialogModal()}
                     </div>
                     <div className='Container-Table'>
-                        <DataTable value={this.state.Sellers} paginator
+                        <DataTable value={this.state.Customers} paginator
                             paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
                             currentPageReportTemplate="Showing {first} to {last} of {totalRecords}" rows={5} 
                            globalFilter={this.state.globalFilterTable}
@@ -314,10 +308,9 @@ class Sellers extends Component {
                             <Column field="strName" header="Nombres"></Column>
                             <Column field="strLastName" header="Apellidos"></Column>
                             <Column field="strEmail" header="Correo"></Column>
-                            <Column field="strPassword" header="Clave"></Column>
                             <Column field="strPhone" header="Celular"></Column>
                             <Column field="strAddress" header="Dirección"></Column>
-                            <Column field="strDescriptionZone" header="Zona"></Column>
+                            <Column field="strDescriptionCity" header="Ciudad"></Column>
                             <Column header="Acciones" body={this.ButtonsTable}></Column>
                         </DataTable>
                     </div>
@@ -327,4 +320,4 @@ class Sellers extends Component {
     }
 }
 
-export default Sellers;
+export default Customers;

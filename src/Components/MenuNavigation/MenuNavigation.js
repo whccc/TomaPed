@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
     BsFillHouseDoorFill, BsFillPersonFill, BsFillGrid3X3GapFill,
-    BsFillFlagFill, BsFillArchiveFill, BsFillBriefcaseFill, BsFillPeopleFill
+    BsFillFlagFill, BsFillArchiveFill, BsFillPeopleFill
 } from "react-icons/bs";
 
 import './MenuNavigation.css';
@@ -41,12 +41,6 @@ class MenuNavigation extends Component {
                             <a href="/Products">
                                 <BsFillArchiveFill />
                                 <small>Products</small>
-                            </a>
-                    </li>
-                    <li>
-                            <a href="/TypeOrders">
-                                <BsFillBriefcaseFill />
-                                <small>Type Orders</small>
                             </a>
                     </li>
                     <li>

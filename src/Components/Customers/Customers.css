@@ -1,10 +1,10 @@
-.Container-Sellers{
+.Container-Customers{
     padding: 10px;
     max-width: 1500px;
     padding-top: 30px;
     margin:auto;
 }
-.Container-Sellers .Container-Sell{
+.Container-Customers .Container-Sell{
     border:1px solid #ddd;
     padding: 5px;
     border-radius: 20px;
@@ -12,7 +12,7 @@
     box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
 }
 
-.Container-Sellers .Container-Sell h1{
+.Container-Customers .Container-Sell h1{
     text-align: center;
     border-bottom: 1px solid #ddd;
     padding: 15px;
@@ -20,84 +20,84 @@
     border-top-left-radius: 20px;
 }
 /*Modal*/
-.Container-Sellers .Container-Modal > button{
+.Container-Customers .Container-Modal > button{
  margin-bottom: 20px;
  margin-top: 20px;
  background: var(--bg-primary);
 }
-.Container-Sellers .Container-Data-Modal{
+.Container-Customers .Container-Data-Modal{
     padding-top: 10px;
 }
-.Container-Sellers .Container-Data-Modal .p-float-label{
+.Container-Customers .Container-Data-Modal .p-float-label{
     margin-bottom: 20px;
 }
-.Container-Sellers .Container-Data-Modal .p-float-label input{
+.Container-Customers .Container-Data-Modal .p-float-label input{
     width: 100%;
 }
-.Container-Sellers .Container-Modal .Container-button > button{
+.Container-Customers .Container-Modal .Container-button > button{
     margin-right: 10px;
     margin-top: 10px;
 }
 /*Table*/
-.Container-Sellers .Container-Table{
+.Container-Customers .Container-Table{
     overflow: auto;
 }
-.Container-Sellers .p-paginator-current{
+.Container-Customers .p-paginator-current{
     display: none;
 }
-.Container-Sellers .p-paginator{
+.Container-Customers .p-paginator{
     width: 600px;
     justify-content: flex-start !important;
     border:none !important;
 }
-.Container-Sellers .table-header  div:nth-child(1){
+.Container-Customers .table-header  div:nth-child(1){
     margin-bottom: 5px;
 }
-.Container-Sellers  .p-datatable-header{
+.Container-Customers  .p-datatable-header{
     background: none !important; 
     border: none !important;
 }
-.Container-Sellers .SelectZone{
+.Container-Customers .SelectZone{
     width: 100%;
     margin-bottom: 20px;
 }
 @media(min-width:1000px){
-    .Container-Sellers{
+    .Container-Customers{
         padding-left: 80px;
     }
 
   
     /*Modal*/
-    .Container-Sellers .Container-Data-Modal .ContainerDataSeller{
+    .Container-Customers .Container-Data-Modal .ContainerDataCustomer{
         display: flex;
         flex-direction: row;
     }
     
-    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div{
+    .Container-Customers .Container-Data-Modal .ContainerDataCustomer > div{
      padding: 5px;
      flex:1 1 auto;
     }
-    .Container-Sellers .p-dialog{
+    .Container-Customers .p-dialog{
         width: 50vw !important;
     }
-    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div:nth-child(1)
+    .Container-Customers .Container-Data-Modal .ContainerDataCustomer > div:nth-child(1)
     > span:nth-child(4),
-    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div:nth-child(2)
+    .Container-Customers .Container-Data-Modal .ContainerDataCustomer > div:nth-child(2)
     > span:nth-child(4)
     {
         margin-bottom: 0px;
     }
     /*Table*/
-    .Container-Sellers .table-header{
+    .Container-Customers .table-header{
         display: flex;
     }
-    .Container-Sellers .table-header  div:nth-child(1){
+    .Container-Customers .table-header  div:nth-child(1){
         flex:1 1 auto;
     }
-    .Container-Sellers .table-header  div:nth-child(2){
+    .Container-Customers .table-header  div:nth-child(2){
        text-align: end;
     }
-    .Container-Sellers .p-paginator{
+    .Container-Customers .p-paginator{
         width: 100%;
         justify-content: center !important;
     }
