@@ -4,6 +4,7 @@
     margin: auto;
     min-height: 100vh;
     padding: 10px;
+    padding-top: 30px;
     transition: padding .5s ease-in-out;
 }
 /* Section one */
@@ -17,6 +18,9 @@
     border:1px solid #ddd;
     display: flex;
     flex: 1 1 auto;
+    border-radius: 10px;    
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
     padding: 5px;
     color:var(--bg-secundary);
 }
@@ -35,19 +39,26 @@
     margin-top: 30px;
     text-align: center;
     padding: 10px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
 }
 
 .Container-Home .Container-Section-Two h4,
 .Container-Home .Container-Section-Three h4{
     border-bottom: 1px solid #ddd;
+
     padding: 10px;
 }
 /*Section three */
 .Container-Home .Container-Section-Three{
     padding: 10px;
     border:1px solid #ddd;
+    border-radius: 10px;
     margin-top: 30px;
     text-align: center;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
 }
 .Container-Home .Container-table{
     overflow: auto;

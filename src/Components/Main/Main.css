@@ -1,5 +1,7 @@
 body{
     margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8fb;
 }
 main{
     position: relative;
@@ -8,13 +10,16 @@ main{
 :root{
     --bg-primary:#5271ff;
     --bg-secundary:#606060;
-    --bg-danger:red;
+    --bg-danger:#dc3545;
 }
 .bg-primary{
     background: var(--bg-primary);
 }
 .bg-danger{
     background: var(--bg-danger);
+}
+button.bg-danger:hover{
+    background:#c42e3d !important;
 }
 h1,h2,h3,h4,h5,h6,label,p{
     margin:0px;

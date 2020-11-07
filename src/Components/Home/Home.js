@@ -44,7 +44,7 @@ class Home extends Component {
                     backgroundColor: ['rgba(145, 227, 70, .5)', 'rgba(227, 142, 116, .5)', 'rgba(75,182,192,.5)'],
                     borderColor: ['rgba(145, 227, 70, 1)', 'rgba(227, 142, 116, 1)', 'rgba(75,182,192,1)'],
                     borderWidth: 1,
-                    data: [65, 59, 80]
+                    data: [0, 59, 80]
                 }
             ]
         }

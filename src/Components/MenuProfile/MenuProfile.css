@@ -7,6 +7,9 @@
     display: flex;
     flex-direction: row;
     flex: 1 1 auto;
+    background: #fff;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.25);
+    box-shadow: 0 0 4px rgba(0,0,0,.25);
 }
 /* Section One*/
 .Container-Profile-Menu .Container-PM .Profile-Menu-Section-One{
@@ -15,6 +18,7 @@
     padding-right: 20px;
     padding-bottom: 10px;
     padding-top:10px;
+    
 }
 .Container-Profile-Menu .Container-Img{
     width: 40px;
@@ -41,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .Container-Profile-Menu .Container-PMSTWO h6{
@@ -68,6 +73,8 @@
 .Container-Profile-Menu .Profile-Menu-Section-Three{
     background: var(--bg-primary);
     border-bottom:1px solid #fff;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.25);
+    box-shadow: 0 0 4px rgba(0,0,0,.25);
     display: flex;
     align-items: center;
     font-size: 25px;

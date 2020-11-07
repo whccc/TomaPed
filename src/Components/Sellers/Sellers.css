@@ -1,17 +1,23 @@
 .Container-Sellers{
     padding: 10px;
     max-width: 1500px;
+    padding-top: 30px;
     margin:auto;
 }
 .Container-Sellers .Container-Sell{
     border:1px solid #ddd;
     padding: 5px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
 }
 
-.Container-Sellers .Container-Sell h3{
+.Container-Sellers .Container-Sell h1{
     text-align: center;
     border-bottom: 1px solid #ddd;
-    padding: 10px;
+    padding: 15px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
 }
 /*Modal*/
 .Container-Sellers .Container-Modal > button{
@@ -30,22 +36,67 @@
 }
 .Container-Sellers .Container-Modal .Container-button > button{
     margin-right: 10px;
+    margin-top: 10px;
 }
 /*Table*/
 .Container-Sellers .Container-Table{
     overflow: auto;
 }
 .Container-Sellers .p-paginator{
-    width: 650px;
+    width: 600px;
+    justify-content: flex-start !important;
+    border:none !important;
+}
+.Container-Sellers .table-header  div:nth-child(1){
+    margin-bottom: 5px;
+}
+.Container-Sellers  .p-datatable-header{
+    background: none !important; 
+    border: none !important;
+}
+.Container-Sellers .SelectZone{
+    width: 100%;
+    margin-bottom: 20px;
 }
 @media(min-width:1000px){
     .Container-Sellers{
         padding-left: 80px;
     }
+
+  
+    /*Modal*/
+    .Container-Sellers .Container-Data-Modal .ContainerDataSeller{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div{
+     padding: 5px;
+     flex:1 1 auto;
+    }
     .Container-Sellers .p-dialog{
         width: 50vw !important;
     }
+    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div:nth-child(1)
+    > span:nth-child(4),
+    .Container-Sellers .Container-Data-Modal .ContainerDataSeller > div:nth-child(2)
+    > span:nth-child(4)
+    {
+        margin-bottom: 0px;
+    }
+    /*Table*/
+    .Container-Sellers .table-header{
+        display: flex;
+    }
+    .Container-Sellers .table-header  div:nth-child(1){
+        flex:1 1 auto;
+    }
+    .Container-Sellers .table-header  div:nth-child(2){
+       text-align: end;
+    }
     .Container-Sellers .p-paginator{
         width: 100%;
+        justify-content: center !important;
     }
+   
 }
