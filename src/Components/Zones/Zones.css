@@ -1,0 +1,44 @@
+.Container-Zone{
+    padding: 10px;
+    max-width: 800px;
+    padding-top: 30px;
+    margin:auto;
+}
+.Container-Zone .ContainerZone{
+    border:1px solid #ddd;
+    padding: 5px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+}
+
+/*Table*/
+.Container-Zone .Container-Table{
+    overflow: auto;
+}
+.Container-Zone .p-paginator .p-paginator-current,
+.Container-Zone .p-paginator #pr_id_1{
+    display: none;
+}
+.Container-Zone .p-datatable-header{
+    background: none !important;
+}
+.Container-Zone h1{
+    padding: 15px;
+    text-align: center;
+}
+.Container-Zone .ContainerDataSeller{
+    padding-top: 10px;
+}
+.Container-Zone .ContainerDataSeller{
+    margin-bottom: 10px;
+}
+.Container-Zone .p-datatable-header .table-header > div:nth-child(1){
+    margin-bottom: 10px;
+}
+
+@media(min-width:1000px){
+    .Container-Zone{
+        padding-left: 80px;
+    }
+}

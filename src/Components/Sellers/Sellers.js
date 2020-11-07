@@ -295,10 +295,10 @@ class Sellers extends Component {
     render() {
         return (
             <section className='Container-Sellers'>
-                <Messages ref={(el) => this.messages = el}></Messages>
-
+               
                 <div className='Container-Sell'>
                     <h1>Sellers</h1>
+                     <Messages ref={(el) => this.messages = el}></Messages>
                     <div className='Container-Modal'>
                         {this.DialogModal()}
                     </div>
