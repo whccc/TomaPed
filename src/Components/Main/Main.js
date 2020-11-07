@@ -4,6 +4,7 @@ import MenuProfile from '../MenuProfile/MenuProfile';
 import Home from '../Home/Home';
 import Sellers from '../Sellers/Sellers';
 import Zones from '../Zones/Zones';
+import Cities from '../City/City';
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import '../../../primereact/resources/themes/bootstrap4-light-blue/theme.css';
 import '../../../primereact/resources/primereact.min.css';
@@ -22,6 +23,7 @@ class Main extends Component {
                         <Route exact path='/' component={Home} />
                         <Route exact path="/Sellers" component={Sellers}/>
                         <Route exact path="/Zones" component={Zones}/>
+                        <Route exact path="/Cities" component={Cities}/>
                     </Switch>
                 </BrowserRouter>
             </main>

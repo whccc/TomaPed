@@ -1,0 +1,48 @@
+.Container-City{
+    padding: 10px;
+    max-width: 800px;
+    padding-top: 30px;
+    margin:auto;
+}
+.Container-City .ContainerCity{
+    border:1px solid #ddd;
+    padding: 5px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+}
+
+/******Components *************/
+.Container-City h1{
+    padding: 20px;
+    text-align: center;
+}
+
+/*******Modal**************/
+.Container-City .p-dialog-content{
+   padding: 25px !important;
+}
+.Container-City .Container-button{
+    margin-top: 20px;
+}
+.Container-City #dbZone,.Container-City #strDescription{
+    width: 100%;
+}
+
+/**********Table***********/
+
+.Container-City .p-datatable-header{
+    background: none !important;
+}
+.Container-City .table-header button{
+    margin-bottom: 10px;
+}
+.Container-City .Container-Table{
+    overflow: auto;
+}
+.Container-City .p-paginator-current{
+    display: none;
+}
+.Container-City .p-paginator {
+    border:none ;
+}
