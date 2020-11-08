@@ -5,6 +5,7 @@
     min-height: 100vh;
     padding: 10px;
     padding-top: 30px;
+    padding-top:120px;
     transition: padding .5s ease-in-out;
 }
 /* Section one */

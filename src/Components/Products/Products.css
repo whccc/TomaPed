@@ -1,0 +1,99 @@
+.Container-Product
+{
+    padding: 10px;
+    max-width: 900px;
+    padding-top: 30px;
+    padding-top:120px;
+    margin:auto;
+}
+.Container-Product .ContainerProduct{
+    border:1px solid #ddd;
+    padding: 5px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+}
+.Container-Product .ContainerProduct h1{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+/******MODAL**********/
+.Container-Product .ContainerImgProduct{
+    width: 300px;
+    height: 200px;
+    margin:auto;
+    overflow: hidden;
+}
+.Container-Product .ContainerImgProduct img{
+    width: 100%;
+}
+.Container-Product .ContainerDataProduct > div > label{
+    margin-bottom: 30px;
+    display:block;
+    padding:10px;
+    text-align: center;
+    font-weight: 600;
+    color:#fff;
+    cursor: pointer;
+    border-radius: 5px;
+    background: var(--bg-primary);
+}
+
+.Container-Product .ContainerDataProduct > div > span{
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.Container-Product .ContainerDataProduct > div > span input{
+    width: 100%;
+}
+.Container-Product .ContainerDataProduct > div > input[type="file"]{
+    display: none ;
+}
+
+/********TABLE**********/
+.Container-Product .TblImgProduct{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+}
+
+.Container-Product .Container-Table{
+    overflow: auto;
+}
+.Container-Product  .p-paginator-current{
+    display: none;
+}
+.Container-Product  .p-paginator{
+    border:none !important;
+}
+.Container-Product  .table-header  div:nth-child(1){
+    margin-bottom: 5px;
+}
+.Container-Product   .p-datatable-header{
+    background: none !important; 
+    border: none !important;
+}
+@media(min-width:1000px){
+    .Container-Product{
+        padding-left: 80px;
+    }
+    .ContainerProduct .ContainerDataProduct{
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .ContainerProduct .ContainerDataProduct > div:nth-child(1){
+        flex:1 1 auto;
+        padding-right: 10px;
+    }
+    .ContainerProduct .ContainerDataProduct > div:nth-child(2){
+        flex:1 1 auto;
+    }
+    .Container-Product .ContainerImgProduct{
+        margin:none !important;
+    }
+}
