@@ -62,7 +62,7 @@ class MenuProfile extends Component {
                     <div className='Profile-Menu-Section-Two'>
                         <div className='Container-PMSTWO'>
                             <h6>
-                                {this.state.strDataUser.strName.toUpperCase()}{" "}{this.state.strDataUser.strLastName.toUpperCase()}
+                                {this.state.strDataUser.strName.toUpperCase()}
                                 <a href="#" onClick={this.CerrarSesion}>Cerrar Sesión</a>
                             </h6>
                             

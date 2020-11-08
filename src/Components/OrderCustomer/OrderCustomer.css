@@ -1,0 +1,147 @@
+.Container-OrderCustomer{
+    padding: 10px;
+    max-width: 1100px;
+    padding-top: 30px;
+    padding-top:120px;
+    margin:auto;
+}
+
+
+.Container-OrderCustomer .ContainerCustomer .ContainerDataOrder{
+    border:1px solid #ddd;
+    padding: 15px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+    margin-bottom: 20px;
+}
+.Container-OrderCustomer .ContainerCustomer .ContainerDetailOrder{
+    border:1px solid #ddd;
+    padding: 30px;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+}
+/*Order*/
+.Container-OrderCustomer .ContainerCustomer .ContainerDataOrder .ContainerDataOrder-one{
+    display: flex;
+    flex-direction: row;
+    padding:10px;
+}
+.Container-OrderCustomer .ContainerCustomer .ContainerDataOrder .ContainerDataOrder-one .ContainerSearchpedido{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1 1 auto;
+}
+.Container-OrderCustomer .ContainerDataOrder-Two{
+    padding:20px;
+    border-radius: 5px;
+    border:1px solid #ddd;
+}
+.Container-OrderCustomer .ContainerDataOrder-Two h1{
+    margin-bottom: 10px;
+    text-align: center;
+}
+.Container-OrderCustomer .ContainerDataOrder-Two div:nth-child(1) > div > span{
+    margin-bottom: 20px;
+}
+
+.Container-OrderCustomer .ContainerDataOrder-Two input{
+    width: 100%;
+    text-align: center;
+}
+
+.Container-OrderCustomer .ContainerDataOrder-Two .ContainerButtons{
+    text-align: end;
+}
+
+/*********DETAIL********************/
+.Container-OrderCustomer .ContainerDetailOrder .ContainerSearchProduct input{
+    width: 200px;
+}
+.Container-OrderCustomer .ContainerDetailOrder .TblImgProduct{
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+}
+.Container-OrderCustomer .ContainerTable{
+    margin-top:20px;
+}
+
+/********MODAL*********/
+.Container-OrderCustomer .Container-Data-Modal{
+    overflow: auto;
+    width: 300px;
+}
+.Container-OrderCustomer .Container-Data-Modal .p-paginator {
+    display:none;
+    border:none !important;
+}
+
+/******PRODUCT MODAL*****/
+
+.Container-OrderCustomer .ContainerDataProduct .ContainerImgProduct img{
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px;
+}
+.Container-OrderCustomer .ContainerDataProduct > div > span{
+    margin-bottom: 20px;
+}
+
+.Container-OrderCustomer .ContainerDataProduct span input{
+    width: 100%;
+}
+.Container-OrderCustomer .ContainerDetailOrder .ContainerTable{
+    overflow: auto;
+}
+.Container-OrderCustomer .ContainerDetailOrder .p-paginator{
+        border:none !important;
+}
+.Container-OrderCustomer .p-toast-top-right{
+    right:2px;
+}
+.Container-OrderCustomer .p-toast{
+    width: auto !important;
+}
+
+@media(min-width:1000px){
+    .Container-OrderCustomer{
+        padding-left: 80px;
+    }
+    
+    .Container-OrderCustomer .ContainerDataOrder-Two div:nth-child(1) > div > span{
+        padding-left:5px;
+    }
+    .Container-OrderCustomer .ContainerDataOrder-Two h1{
+        margin-bottom: 20px;
+    }
+   
+    .Container-OrderCustomer  .ContainerDataOrder{
+        padding: 10px;
+        flex:1 1 auto;
+        height: 450px;
+    }
+    .Container-OrderCustomer .ContainerCustomer{
+        display:flex;
+        flex-direction: row;
+    }
+    .Container-OrderCustomer .ContainerDetailOrder{
+        width: 70%;
+        margin-left: 10px;
+    }
+    /***MODAL***/
+    .Container-OrderCustomer .Container-Data-Modal{
+     
+        width: auto;
+    }
+    .Container-OrderCustomer .ContainerDataProduct{
+        display: flex;
+        flex-direction: row;
+    }
+    .Container-OrderCustomer .ContainerImgProduct{
+        padding-right:5px;
+    }
+}
