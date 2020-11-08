@@ -9,6 +9,9 @@ import './MenuProfile.css';
 class MenuProfile extends Component {
     constructor(props) {
         super(props)
+        this.state={
+            strDataUser:JSON.parse(localStorage.getItem('strJsonUser'))
+        }
     }
     componentDidMount() {
         document.querySelector('.Container-Profile-Menu .Profile-Menu-Section-Three').addEventListener('click', () => {
@@ -33,6 +36,15 @@ class MenuProfile extends Component {
             console.log(ex);
         }
     }
+    //Cerrar Sesión
+    CerrarSesion=()=>{
+        try{
+            localStorage.removeItem("strJsonUser");
+            window.location.href="/";
+        }catch(Error){
+            console.log(Error)
+        }
+    }
     render() {
         return (
             <header className='Container-Profile-Menu'>
@@ -49,7 +61,11 @@ class MenuProfile extends Component {
                     </div>
                     <div className='Profile-Menu-Section-Two'>
                         <div className='Container-PMSTWO'>
-                            <h6>WILSON CASTRO</h6>
+                            <h6>
+                                {this.state.strDataUser.strName.toUpperCase()}{" "}{this.state.strDataUser.strLastName.toUpperCase()}
+                                <a href="#" onClick={this.CerrarSesion}>Cerrar Sesión</a>
+                            </h6>
+                            
                             <div className='Container-Icon'>
                                 <BsFillPersonFill
                                     className='IconPerson'

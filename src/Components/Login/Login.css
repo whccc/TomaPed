@@ -1,0 +1,51 @@
+
+.Container-Login{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Container-Login .ContainerLogin{
+    background: #fff;
+    padding: 30px;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 5px;
+    box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
+}
+.Container-Login .ContainerImg{
+    width: 130px;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.Container-Login .ContainerImg img{
+    width: 100%;
+}
+
+.Container-Login .ContainerLogin input:focus,
+
+.Container-Login .ContainerLogin button:focus{
+    outline:none !important;
+}
+.Container-Login .ContainerLogin input{
+    width: 100%;
+    display: block;
+    padding: 15px; 
+    background: #f6f6f6;
+    border:1px solid #000;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.Container-Login .ContainerLogin button:hover{
+    opacity: .9;;
+}
+.Container-Login .ContainerLogin > button{
+    width: 100%;
+    padding: 15px;
+    cursor: pointer;
+    background: var(--bg-primary);
+    color:#fff;
+    border:none;
+    border-radius: 5px;
+}

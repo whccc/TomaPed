@@ -21,7 +21,7 @@
     
 }
 .Container-Profile-Menu .Container-Img{
-    width: 40px;
+    width: 50px;
     
 }
 
@@ -52,6 +52,12 @@
     color:#606060;
     line-height:normal;
     margin-right: 10px;
+}
+
+.Container-Profile-Menu .Container-PMSTWO h6 a{
+    display: block;;
+    text-align: end;
+    color:var(--bg-primary)
 }
 .Container-Profile-Menu .Container-Icon{
     border:1px solid #606060;
@@ -94,5 +100,9 @@
 @media(min-width:700px){
     .Container-Profile-Menu .w-IconMenu{
         width: 65px;
+    }
+    .Container-Profile-Menu .Container-Img{
+        width: 60px;
+        
     }
 }
