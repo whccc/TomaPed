@@ -210,7 +210,7 @@ class Products extends Component{
     ImgProduct=(objProduct)=>{
         try{
             return (
-                <img className="TblImgProduct" src={URL_API+"/api/product/img/"+objProduct.intIdProduct+".jpg?"+new Date()}/>
+                <img className="TblImgProduct" src={URL_API+"/api/product/img/"+objProduct.intIdProduct+".jpg?"+Date.now()}/>
             );
         }catch(Error){
             console.log(Error)
