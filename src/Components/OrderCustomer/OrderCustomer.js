@@ -83,7 +83,8 @@ class OrderCustomer extends Component {
             }
 
             let ArrayProduct = this.state.JsonDataTableProducts;
-            ArrayProduct.push(objProduct)
+            ArrayProduct.push(objProduct);
+            this.CreateDetailOrder();
             this.setState({
                 JsonDataTableProducts: ArrayProduct,
                 displayModal: false,
@@ -94,7 +95,7 @@ class OrderCustomer extends Component {
                     urlImg: null
                 },
                 strQuantityProduct: 1
-            })
+            });
         } catch (Error) {
             console.log(Error)
         }
@@ -135,6 +136,23 @@ class OrderCustomer extends Component {
             }
         } catch (Error) {
             console.log(Error)
+        }
+    }
+    CreateDetailOrder=async()=>{
+        try{
+            let objOrder={
+                intQuantityOrder:this.state.strQuantityProduct,
+                intTotalOrder:(this.state.strQuantityProduct*this.state.JsonProducts.strPrice),
+                intPriceProduct:this.state.JsonProducts.strPrice,
+                intIdProductOrder:this.state.JsonProducts.intIdProduct,
+                intIdOrderP:this.state.intIdOrder
+            }
+            let strData=await axios.post(URL_API+"/api/order/createdetail",objOrder);
+            if(strData.data.Success){
+
+            }
+        }catch(Error){
+            console.log(Error);
         }
     }
     /*************CUSTOMER******************/

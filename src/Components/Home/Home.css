@@ -22,7 +22,8 @@
     border-radius: 10px;    
     background: #fff;
     box-shadow: 0 0.5rem 1rem rgba(20,40,60,.03);
-    padding: 5px;
+    padding: 15px;
+    margin-left: 2px;
     color:var(--bg-secundary);
 }
 .Container-Home .Container-HM .Container-Section-One .Container-info{
@@ -34,6 +35,8 @@
     text-align: end;
     font-size: 12px;
 }
+
+
 /*Section two */
 .Container-Home .Container-Section-Two{
     border:1px solid #ddd;
@@ -65,7 +68,7 @@
     overflow: auto;
 }
 .Container-Home .p-paginator{
-    width: 750px;
+    width: 400px;
 }
 
 
@@ -107,5 +110,8 @@
     .Container-Home .Container-Section-Three{
         width: 48.75%;
         float: left;
+    }
+    .Container-Home .p-paginator{
+        width: auto;
     }
 }
