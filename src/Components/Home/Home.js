@@ -18,7 +18,7 @@ class Home extends Component {
             intNroOrders:0,
             intNroCustomers:0,
             objSellers:{
-            labels: ['Vendedor1', 'Vendedor2', 'Vendedor3'],
+            labels: [],
             datasets: [
                 {
                     label: "Pedidos",

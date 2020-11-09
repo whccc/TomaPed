@@ -33,12 +33,12 @@ class MenuNavigation extends Component {
                                 <small>Home</small>
                             </a>
                         </li>
-                        <li>
+                        {/*<li>
                             <a href="/Order">
                                 <BsFillPeopleFill />
                                 <small>Order</small>
                             </a>
-                        </li>
+                        </li>*/}
                         <li>
                             <a href="/Sellers">
                                 <BsFillPersonFill />
