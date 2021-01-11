@@ -1,6 +1,3 @@
-let URL_API='http://192.168.1.56:3000';
+let URL_API = "https://tomapedapi.azurewebsites.net";
 
-
-
-
-export {URL_API}
+export { URL_API };
